@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon } from 'expo';
+import { Icon, FontAwesome } from 'expo';
 
 import Colors from '../constants/Colors';
 
