@@ -1,14 +1,14 @@
 import React from 'react';
-import { Icon } from 'expo';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Colors from '../constants/Colors';
 
-const TabBarIcon = props => (
-    <Icon.Ionicons
-        name={props.name}
+const TabBarIcon2 = props => (
+    <MaterialCommunityIcons
+        name="account"
         size={26}
         style={{ marginBottom: -3 }}
         color={props.focused ? Colors.tabIconSelected : Colors.tabIconDefault}
     />
 );
 
-export default TabBarIcon;
+export default TabBarIcon2;
