@@ -18,6 +18,7 @@ import MyHeader from '../components/Header';
 import MySegment from '../components/Segment';
 import Dropdown from '../components/Dropdown';
 import TimePicker from '../components/TimePicker';
+// import Confirmation from '../components/Confirmation';
 
 class HomeScreen extends Component {
     static navigationOptions = {
@@ -36,6 +37,7 @@ class HomeScreen extends Component {
         selectedSeats: 0,
         from: '5:00 PM',
         to: '7:00 PM',
+        isLoading: false,
         events: [
             {
                 label: 'Kings vs. Sixers 11/19',
@@ -145,6 +147,8 @@ class HomeScreen extends Component {
 
     onSubmit = () => {
         Alert.alert('You tapped the button!');
+        // this.setState({ isLoading: true });
+        this.props.navigation.navigate('Confirmation');
         // fetch(' ', {
         //     method: 'post',
         //     headers: { 'Content-Type': 'application/json' },
@@ -154,6 +158,10 @@ class HomeScreen extends Component {
         // });
     };
 
+    onBack = () => {
+        this.setState({ isLoading: false });
+    };
+
     render() {
         const { from, to } = this.state;
         return (
@@ -161,78 +169,86 @@ class HomeScreen extends Component {
                 <MyHeader title="Welcome Jason" />
                 <Content style={styles.Content}>
                     {/* <Text>{JSON.stringify(this.state)}</Text> */}
-                    <Text style={styles.TextContainer}>CARPOOL ROLE</Text>
-                    <MySegment ride={this.state.ride} onPress={this.onPress} />
-                    <Content style={styles.SwitchContainer}>
-                        <Text style={styles.SwitchText}>
-                            If I don't match as a Rider, try to match me as a
-                            Driver
-                        </Text>
-                        <Switch value={false} style={styles.Switch} />
-                    </Content>
-                    <Form style={styles.Form}>
-                        <Item
-                            style={{
-                                marginTop: -30,
-                                justifyContent: 'flex-start'
-                            }}
-                        >
-                            <Icon
-                                name="ios-home"
+                    <Content>
+                        <Text style={styles.TextContainer}>CARPOOL ROLE</Text>
+                        <MySegment
+                            ride={this.state.ride}
+                            onPress={this.onPress}
+                        />
+                        <Content style={styles.SwitchContainer}>
+                            <Text style={styles.SwitchText}>
+                                If I don't match as a Rider, try to match me as
+                                a Driver
+                            </Text>
+                            <Switch value={false} style={styles.Switch} />
+                        </Content>
+
+                        <Form style={styles.Form}>
+                            <Item
                                 style={{
-                                    flex: 1,
-                                    color: 'white',
-                                    fontWeight: 'bold'
+                                    marginTop: -30,
+                                    justifyContent: 'flex-start'
                                 }}
-                            />
-                            <Input
-                                style={{ flex: 1 }}
-                                placeholder="1ksdfjaskljfkla"
-                                value={this.state.home}
-                                onChange={this.onHomeChange}
-                            />
-                        </Item>
-                        <Dropdown
-                            style={styles.Event}
-                            text="CHOOSE YOUR EVENT:"
-                            placeholder="Kings vs Lakers"
-                            datas={this.state.events}
-                            onValueChange={this.onEventChange}
-                            selectedValue={this.state.selectedEvent}
-                        />
-                        {!this.state.ride && (
+                            >
+                                <Icon
+                                    name="ios-home"
+                                    style={{
+                                        flex: 1,
+                                        color: 'white',
+                                        fontWeight: 'bold'
+                                    }}
+                                />
+                                <Input
+                                    style={{ flex: 1 }}
+                                    placeholder="1 Sports Pkwy, Sacramento, CA 95834"
+                                    value={this.state.home}
+                                    onChange={this.onHomeChange}
+                                />
+                            </Item>
                             <Dropdown
-                                style={styles.Seat}
-                                text="SEATS AVAILABLE:"
-                                placeholder="Seats Available:"
-                                datas={this.state.seats}
-                                onValueChange={this.onSeatChange}
-                                selectedValue={this.state.selectedSeats}
+                                style={styles.Event}
+                                text="CHOOSE YOUR EVENT:"
+                                placeholder="Kings vs Lakers"
+                                datas={this.state.events}
+                                onValueChange={this.onEventChange}
+                                selectedValue={this.state.selectedEvent}
                             />
-                        )}
-                        <TimePicker
-                            text="YOUR PICKUP TIME"
-                            from={from}
-                            to={to}
-                        />
-                        {!this.state.ride && (
-                            <Dropdown
-                                style={styles.Rendezvous}
-                                text="Rendezvous location:"
-                                placeholder="Rendezvous location:"
-                                datas={this.state.rendezvous}
-                                onValueChange={this.onRendezvousChange}
-                                selectedValue={this.state.selectedRendezvous}
+                            {!this.state.ride && (
+                                <Dropdown
+                                    style={styles.Seat}
+                                    text="SEATS AVAILABLE:"
+                                    placeholder="Seats Available:"
+                                    datas={this.state.seats}
+                                    onValueChange={this.onSeatChange}
+                                    selectedValue={this.state.selectedSeats}
+                                />
+                            )}
+                            <TimePicker
+                                text="YOUR PICKUP TIME"
+                                from={from}
+                                to={to}
                             />
-                        )}
-                        <Button
-                            primary
-                            style={styles.ButtonContainer}
-                            onPress={this.onSubmit}
-                        >
-                            <Text> Schedule </Text>
-                        </Button>
-                    </Form>
+                            {!this.state.ride && (
+                                <Dropdown
+                                    style={styles.Rendezvous}
+                                    text="Rendezvous location:"
+                                    placeholder="Rendezvous location:"
+                                    datas={this.state.rendezvous}
+                                    onValueChange={this.onRendezvousChange}
+                                    selectedValue={
+                                        this.state.selectedRendezvous
+                                    }
+                                />
+                            )}
+                            <Button
+                                primary
+                                style={styles.ButtonContainer}
+                                onPress={this.onSubmit}
+                            >
+                                <Text> Schedule </Text>
+                            </Button>
+                        </Form>
+                    </Content>
                 </Content>
             </Container>
         );

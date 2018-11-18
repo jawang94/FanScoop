@@ -10,9 +10,11 @@ import TabBarIcon2 from '../components/TabBarIcon2';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import ConfirmationScreen from '../screens/ConfirmationScreen';
 
 const HomeStack = createStackNavigator({
-    Home: HomeScreen
+    Home: HomeScreen,
+    Confirmation: ConfirmationScreen
 });
 
 HomeStack.navigationOptions = {
