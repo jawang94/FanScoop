@@ -24,48 +24,43 @@ class RouteScreen extends Component {
     };
 
     state = {
-        ride: false,
+        ride: true,
         response: {
             driver: {
-                user_name: 'ryan efendy',
-                user_id: '67890',
-                lat: '30',
-                lon: '40',
-                from_time: '15:00',
+                user_id: '2',
+                user_name: 'Alex Chiang',
+                description: 'Hi I am a sacramento kings fan',
+                rendezvous: 'Outside the Stadium',
+                seat_available: 4,
+                lon: -121.3069,
                 to_time: '17:00',
-                rendezvous: 'gate 1',
-                seat_available: '3'
+                from_time: '15:00',
+                lat: 38.687
             },
             riders: [
                 {
-                    user_name: 'first rider',
-                    user_id: '67891',
-                    lat: '30',
-                    lon: '40',
-                    from_time: '15:00',
+                    user_id: '67890',
+                    user_name: 'Lebron James',
+                    lon: -121.3083,
                     to_time: '17:00',
-                    rendezvous: 'gate 1',
-                    seat_available: '3'
+                    from_time: '15:00',
+                    lat: 38.6914
                 },
                 {
-                    user_name: 'second rider',
-                    user_id: '67892',
-                    lat: '30',
-                    lon: '40',
-                    from_time: '15:00',
+                    user_id: '6',
+                    user_name: 'Bogdan Bogdanovic',
+                    lon: -121.314,
                     to_time: '17:00',
-                    rendezvous: 'gate 1',
-                    seat_available: '3'
+                    from_time: '15:00',
+                    lat: 38.6695
                 },
                 {
-                    user_name: 'third rider',
-                    user_id: '67893',
-                    lat: '30',
-                    lon: '40',
-                    from_time: '15:00',
+                    user_id: '8',
+                    user_name: 'Harry Giles',
+                    lon: -121.3124,
                     to_time: '17:00',
-                    rendezvous: 'gate 1',
-                    seat_available: '3'
+                    from_time: '15:00',
+                    lat: 38.7063
                 }
             ]
         }
