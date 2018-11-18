@@ -1,30 +1,86 @@
 import React, { Component } from 'react';
-import {
-    Container,
-    Header,
-    Content,
-    Form,
-    Item,
-    Picker,
-    Left,
-    Title,
-    Body,
-    Right,
-    Button,
-    Icon,
-    Segment,
-    Text
-} from 'native-base';
+import { Container, Content, Form, Button, Text, Switch } from 'native-base';
+
 import { Font } from 'expo';
 // import { MonoText } from '../components/StyledText';
 import MyHeader from '../components/Header';
 import MySegment from '../components/Segment';
 import Dropdown from '../components/Dropdown';
-import MyDatePicker from '../components/MyDatePicker';
+import TimePicker from '../components/TimePicker';
 
-export default class HomeScreen extends Component {
+class HomeScreen extends Component {
     static navigationOptions = {
         header: null
+    };
+
+    state = {
+        ride: true,
+        events: [
+            {
+                label: 'Kings vs. Sixers 11/19',
+                value: 0
+            },
+            {
+                label: 'Kings vs. Warriors 11/19',
+                value: 1
+            },
+            {
+                label: 'Kings vs. Rockets 11/19',
+                value: 2
+            },
+            {
+                label: 'Kings vs. Lakers 11/19',
+                value: 3
+            },
+            {
+                label: 'Kings vs. Celtics 11/19',
+                value: 4
+            }
+        ],
+        rendezvous: [
+            {
+                label: 'Gate A',
+                value: 0
+            },
+            {
+                label: 'Gate B',
+                value: 1
+            },
+            {
+                label: 'Gate C',
+                value: 2
+            },
+            {
+                label: 'Gate D',
+                value: 3
+            },
+            {
+                label: 'Gate E',
+                value: 4
+            }
+        ],
+        seats: [
+            {
+                label: '1',
+                value: 0
+            },
+            {
+                label: '2',
+                value: 1
+            },
+            {
+                label: '3',
+                value: 2
+            },
+            {
+                label: '4',
+                value: 3
+            },
+            {
+                label: '5',
+                value: 4
+            }
+        ]
     };
 
     // change to OpenSans font
@@ -34,19 +90,38 @@ export default class HomeScreen extends Component {
         });
     }
 
+    onPress = () => {
+        this.setState({ ride: !this.state.ride });
+    };
+
     render() {
         return (
             <Container>
                 <MyHeader title="Welcome Jason" />
                 <Content>
-                    <Text>Carpool Role</Text>
-                    <MySegment />
+                    <Text>CARPOOL ROLE</Text>
+                    <MySegment ride={this.state.ride} onPress={this.onPress} />
+                    <Text>
+                        If I don't match as a Rider try to match me as a Driver
+                    </Text>
+                    <Switch value />
                     <Form>
-                        <Dropdown placeholder="Choose your event:" />
-                        <Dropdown placeholder="Seats Available" />
-                        <MyDatePicker />
-                        {/* <Dropdown placeholder="Availability" /> */}
-                        <Dropdown placeholder="Rendezvous Location" />
+                        <Dropdown
+                            text="CHOOSE YOUR EVENT:"
+                            placeholder="Choose your event:"
+                            data={this.state.events}
+                        />
+                        <Dropdown
+                            text="SEATS AVAILABLE:"
+                            placeholder="Seats Available:"
+                            data={this.state.seats}
+                        />
+                        <TimePicker text="YOUR PICKUP TIME" />
+                        <Dropdown
+                            text="CHOOSE YOUR EVENT:"
+                            placeholder="Rendezvous location:"
+                            data={this.state.rendezvous}
+                        />
                         <Button primary>
                             <Text> Schedule </Text>
                         </Button>
@@ -95,6 +170,7 @@ export default class HomeScreen extends Component {
     // };
 }
 
+export default HomeScreen;
 // const styles = StyleSheet.create({
 //     container: {
 //         flex: 1,

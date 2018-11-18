@@ -1,13 +1,15 @@
-import React from 'react';
-import { Button, Text, Segment } from 'native-base';
+import React, { Component } from 'react';
+import { Button, Text, Segment, Icon } from 'native-base';
 
-const MySegment = () => (
+const MySegment = ({ ride, onPress }) => (
     <Segment>
-        <Button first active>
+        <Button first active={ride} onPress={onPress}>
+            <Icon name="ios-car" />
             <Text>Ride</Text>
         </Button>
-        <Button last>
+        <Button last active={!ride} onPress={onPress}>
             <Text>Drive</Text>
+            <Icon name="ios-car" />
         </Button>
     </Segment>
 );
