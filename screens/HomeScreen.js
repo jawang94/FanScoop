@@ -134,7 +134,12 @@ class HomeScreen extends Component {
                         <Switch value style={styles.Switch} />
                     </Content>
                     <Form style={styles.Form}>
-                        <Item style={{ marginTop: -30 }}>
+                        <Item
+                            style={{
+                                marginTop: -30,
+                                justifyContent: 'flex-start'
+                            }}
+                        >
                             <Icon
                                 name="ios-home"
                                 style={{
@@ -146,6 +151,7 @@ class HomeScreen extends Component {
                             <Input
                                 style={{ flex: 1 }}
                                 placeholder="1 Sports Pkwy, Sacramento, CA 95834"
+                                containerStyle={styles.inputContainer}
                             />
                         </Item>
                         <Dropdown
@@ -265,5 +271,6 @@ const styles = StyleSheet.create({
     ButtonContainer: {
         marginTop: 15,
         marginLeft: 110
-    }
+    },
+    inputContainer: {}
 });

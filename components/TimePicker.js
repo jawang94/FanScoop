@@ -28,7 +28,7 @@ class TimePicker extends Component {
                 </Text>
                 <View>
                     <TouchableOpacity onPress={this.showFromPicker}>
-                        <Text style={styles.text}>{from}</Text>
+                        <Text style={styles.text2}>{from}</Text>
                     </TouchableOpacity>
                     <DateTimePicker
                         isVisible={isFromPickerVisible}
@@ -41,10 +41,10 @@ class TimePicker extends Component {
                         textStyle={{ color: '#8b9dc3' }}
                     />
                 </View>
-                <Text style={styles.text}>To</Text>
+                <Text style={styles.text1}>To</Text>
                 <View>
                     <TouchableOpacity onPress={this.showToPicker}>
-                        <Text style={styles.text}>{to}</Text>
+                        <Text style={styles.text2}>{to}</Text>
                     </TouchableOpacity>
                     <DateTimePicker
                         isVisible={isToPickerVisible}
@@ -67,9 +67,18 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignContent: 'space-between'
     },
-    text: {
+    text1: {
         textAlign: 'center',
         color: '#76d472'
+    },
+    text2: {
+        textAlign: 'center',
+        color: '#76d472',
+        borderStyle: 'solid',
+        borderWidth: 1,
+        borderColor: 'white',
+        width: 100,
+        marginLeft: 20
     }
 });
 
