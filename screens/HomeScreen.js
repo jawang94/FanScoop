@@ -1,6 +1,16 @@
 import React, { Component } from 'react';
 import { StyleSheet } from 'react-native';
-import { Container, Content, Form, Button, Text, Switch } from 'native-base';
+import {
+    Container,
+    Content,
+    Form,
+    Button,
+    Text,
+    Switch,
+    Item,
+    Input,
+    Icon
+} from 'native-base';
 
 import { Font } from 'expo';
 // import { MonoText } from '../components/StyledText';
@@ -124,6 +134,20 @@ class HomeScreen extends Component {
                         <Switch value style={styles.Switch} />
                     </Content>
                     <Form style={styles.Form}>
+                        <Item>
+                            <Icon
+                                name="ios-home"
+                                style={{
+                                    flex: 1,
+                                    color: 'white',
+                                    fontWeight: 'bold'
+                                }}
+                            />
+                            <Input
+                                style={{ flex: 1 }}
+                                placeholder="1 Sports Pkwy, Sacramento, CA 95834"
+                            />
+                        </Item>
                         <Dropdown
                             style={styles.Event}
                             text="CHOOSE YOUR EVENT:"
