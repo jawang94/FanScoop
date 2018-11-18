@@ -134,7 +134,7 @@ class HomeScreen extends Component {
                         <Switch value style={styles.Switch} />
                     </Content>
                     <Form style={styles.Form}>
-                        <Item>
+                        <Item style={{ marginTop: -30 }}>
                             <Icon
                                 name="ios-home"
                                 style={{
@@ -263,7 +263,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between'
     },
     ButtonContainer: {
-        marginTop: 30,
+        marginTop: 15,
         marginLeft: 110
     }
 });
