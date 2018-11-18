@@ -6,30 +6,16 @@ import DateTimePicker from 'react-native-modal-datetime-picker';
 class TimePicker extends Component {
     state = {
         isFromPickerVisible: false,
-        isToPickerVisible: false,
-        from: '',
-        to: ''
+        isToPickerVisible: false
     };
 
     showFromPicker = () => this.setState({ isFromPickerVisible: true });
 
     hideFromPicker = () => this.setState({ isFromPickerVisible: false });
 
-    handleFromPicked = date => {
-        // console.log('A date has been picked: ', date);
-        this.setState({ from: date.toString() });
-        this.hideFromPicker();
-    };
-
     showToPicker = () => this.setState({ isToPickerVisible: true });
 
     hideToPicker = () => this.setState({ isToPickerVisible: false });
-
-    handleToPicked = date => {
-        // console.log('A date has been picked: ', date);
-        this.setState({ to: date.toString() });
-        this.hideToPicker();
-    };
 
     render() {
         const { from, to, isFromPickerVisible, isToPickerVisible } = this.state;
@@ -43,21 +29,22 @@ class TimePicker extends Component {
                     </TouchableOpacity>
                     <DateTimePicker
                         isVisible={isFromPickerVisible}
-                        onConfirm={this.handleFromPicked}
+                        onConfirm={() => this.prop.handleFromPicked()}
                         onCancel={this.hideFromPicker}
                         mode="times"
+                        titleIOS="Your pickup time"
                     />
                 </View>
                 <View>
                     <TouchableOpacity onPress={this.showToPicker}>
-                        <Text>{text}</Text>
                         <Text>{to}</Text>
                     </TouchableOpacity>
                     <DateTimePicker
                         isVisible={isToPickerVisible}
                         onConfirm={this.handleToPicked}
-                        onCancel={this.hideDateTimePicker}
+                        onCancel={this.hideToPicker}
                         mode="times"
+                        titleIOS="Your pickup time"
                     />
                 </View>
             </Content>
