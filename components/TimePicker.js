@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import { Content } from 'native-base';
 import DateTimePicker from 'react-native-modal-datetime-picker';
+import { StyleSheet } from 'react-native';
 
 class TimePicker extends Component {
     state = {
@@ -21,11 +22,13 @@ class TimePicker extends Component {
         const { isFromPickerVisible, isToPickerVisible } = this.state;
         const { text, from, to } = this.props;
         return (
-            <Content>
-                <Text>{text}</Text>
+            <Content style={styles.content}>
+                <Text style={{ color: 'white', fontWeight: 'bold' }}>
+                    {text}
+                </Text>
                 <View>
                     <TouchableOpacity onPress={this.showFromPicker}>
-                        <Text>{from}</Text>
+                        <Text style={styles.text}>{from}</Text>
                     </TouchableOpacity>
                     <DateTimePicker
                         isVisible={isFromPickerVisible}
@@ -35,12 +38,13 @@ class TimePicker extends Component {
                         onCancel={this.hideFromPicker}
                         mode="time"
                         titleIOS="Your pickup time"
+                        textStyle={{ color: '#8b9dc3' }}
                     />
                 </View>
-                <Text>To</Text>
+                <Text style={styles.text}>To</Text>
                 <View>
                     <TouchableOpacity onPress={this.showToPicker}>
-                        <Text>{to}</Text>
+                        <Text style={styles.text}>{to}</Text>
                     </TouchableOpacity>
                     <DateTimePicker
                         isVisible={isToPickerVisible}
@@ -56,5 +60,17 @@ class TimePicker extends Component {
         );
     }
 }
+
+const styles = StyleSheet.create({
+    content: {
+        flex: 1,
+        flexDirection: 'row',
+        alignContent: 'space-between'
+    },
+    text: {
+        textAlign: 'center',
+        color: '#76d472'
+    }
+});
 
 export default TimePicker;

@@ -9,7 +9,14 @@ const Dropdown = ({
     datas
 }) => (
     <Content style={{ marginBottom: 10 }}>
-        <Text style={{ flex: 1, color: 'white', fontWeight: 'bold' }}>
+        <Text
+            style={{
+                flex: 1,
+                color: 'white',
+                fontWeight: 'bold',
+                textAlign: 'center'
+            }}
+        >
             {text}
         </Text>
         <Item picker>
@@ -22,6 +29,7 @@ const Dropdown = ({
                 placeholderIconColor="#007aff"
                 selectedValue={selectedValue}
                 onValueChange={onValueChange}
+                textStyle={{ color: '#76d472' }}
             >
                 {datas.map(data => (
                     <Picker.Item
