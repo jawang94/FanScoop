@@ -25,7 +25,15 @@ class HomeScreen extends Component {
     };
 
     state = {
+        // userName: '',
+        // userId: '',
         ride: true,
+        // lat: '',
+        // long: '',
+        home: '1 Sports Pkwy, Sacramento, CA 95834',
+        selectedEvent: 0,
+        selectedRendezvous: 0,
+        selectedSeats: 0,
         from: '5:00 PM',
         to: '7:00 PM',
         events: [
@@ -118,12 +126,30 @@ class HomeScreen extends Component {
         fn();
     };
 
+    // dropdown handler
+    onEventChange = value => {
+        this.setState({ selectedEvent: value });
+    };
+
+    onRendezvousChange = value => {
+        this.setState({ selectedRendezvous: value });
+    };
+
+    onSeatChange = value => {
+        this.setState({ selectedSeats: value });
+    };
+
+    onHomeChange = value => {
+        this.setState({ home: value });
+    };
+
     render() {
         const { from, to } = this.state;
         return (
             <Container>
                 <MyHeader title="Welcome Jason" />
                 <Content style={styles.Content}>
+                    {/* <Text>{JSON.stringify(this.state)}</Text> */}
                     <Text style={styles.TextContainer}>CARPOOL ROLE</Text>
                     <MySegment ride={this.state.ride} onPress={this.onPress} />
                     <Content style={styles.SwitchContainer}>
@@ -131,7 +157,7 @@ class HomeScreen extends Component {
                             If I don't match as a Rider, try to match me as a
                             Driver
                         </Text>
-                        <Switch value style={styles.Switch} />
+                        <Switch value={false} style={styles.Switch} />
                     </Content>
                     <Form style={styles.Form}>
                         <Item>
@@ -145,32 +171,43 @@ class HomeScreen extends Component {
                             />
                             <Input
                                 style={{ flex: 1 }}
-                                placeholder="1 Sports Pkwy, Sacramento, CA 95834"
+                                placeholder="1ksdfjaskljfkla"
+                                value={this.state.home}
                             />
                         </Item>
                         <Dropdown
                             style={styles.Event}
                             text="CHOOSE YOUR EVENT:"
                             placeholder="Kings vs Lakers"
-                            data={this.state.events}
+                            datas={this.state.events}
+                            onValueChange={this.onEventChange}
+                            selectedValue={this.state.selectedEvent}
                         />
-                        <Dropdown
-                            style={styles.Seat}
-                            text="SEATS AVAILABLE:"
-                            placeholder="Seats Available:"
-                            data={this.state.seats}
-                        />
+                        {!this.state.ride && (
+                            <Dropdown
+                                style={styles.Seat}
+                                text="SEATS AVAILABLE:"
+                                placeholder="Seats Available:"
+                                datas={this.state.seats}
+                                onValueChange={this.onSeatChange}
+                                selectedValue={this.state.selectedSeats}
+                            />
+                        )}
                         <TimePicker
                             text="YOUR PICKUP TIME"
                             from={from}
                             to={to}
                         />
-                        <Dropdown
-                            style={styles.Rendezvous}
-                            text="Rendezvous location:"
-                            placeholder="Rendezvous location:"
-                            data={this.state.rendezvous}
-                        />
+                        {!this.state.ride && (
+                            <Dropdown
+                                style={styles.Rendezvous}
+                                text="Rendezvous location:"
+                                placeholder="Rendezvous location:"
+                                datas={this.state.rendezvous}
+                                onValueChange={this.onRendezvousChange}
+                                selectedValue={this.state.selectedRendezvous}
+                            />
+                        )}
                         <Button primary style={styles.ButtonContainer}>
                             <Text> Schedule </Text>
                         </Button>
