@@ -20,7 +20,7 @@ class ConfirmationScreen extends Component {
                     style={styles.ButtonContainer2}
                     onPress={() => navigate('Home')}
                 >
-                    <Text>Go</Text>
+                    <Text style={styles.Go}>Go</Text>
                 </Button>
             </Content>
         ) : (
@@ -70,7 +70,12 @@ const styles = StyleSheet.create({
     },
     ButtonContainer2: {
         marginTop: 15,
-        marginLeft: 140
+        marginLeft: 130,
+        width: 80,
+        textAlign: 'center'
+    },
+    Go: {
+        marginLeft: 12
     }
 });
 
