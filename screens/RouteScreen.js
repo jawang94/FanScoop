@@ -24,7 +24,7 @@ class RouteScreen extends Component {
     };
 
     state = {
-        ride: true,
+        ride: false,
         response: {
             driver: {
                 user_name: 'ryan efendy',
@@ -202,7 +202,7 @@ class RouteScreen extends Component {
                     </Content>
                 )}
                 <Content
-                    style={{ height: 100, marginTop: -100, paddingBottom: 20 }}
+                    style={{ height: 100, marginTop: -50, paddingBottom: 20 }}
                 >
                     <MyMap />
                 </Content>
