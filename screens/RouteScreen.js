@@ -88,7 +88,7 @@ class RouteScreen extends Component {
                                         square
                                         source={{
                                             uri:
-                                                'https://placeimg.com/240/240/people'
+                                                'https://placeimg.com/400/400/people'
                                         }}
                                     />
                                 </Left>
