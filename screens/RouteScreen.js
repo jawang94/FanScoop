@@ -97,7 +97,9 @@ class RouteScreen extends Component {
                                             borderRadius: 10,
                                             borderWidth: 1,
                                             borderColor: 'white',
-                                            marginLeft: 30
+                                            marginLeft: 20,
+                                            height: 100,
+                                            width: 100
                                         }}
                                     />
                                 </Left>
@@ -115,7 +117,7 @@ class RouteScreen extends Component {
                                     <Text style={styles.BodyText}>
                                         PWI12897
                                     </Text>
-                                    <Button style={{ marginRight: 20 }}>
+                                    <Button style={{ width: 160 }}>
                                         <Text>
                                             <Icon
                                                 name="ios-call"
