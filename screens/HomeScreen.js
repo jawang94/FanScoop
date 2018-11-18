@@ -37,7 +37,7 @@ class HomeScreen extends Component {
         selectedSeats: 0,
         from: '5:00 PM',
         to: '7:00 PM',
-        isLoading: false,
+        // isLoading: false,
         events: [
             {
                 label: 'Kings vs. Sixers 11/19',
@@ -147,20 +147,33 @@ class HomeScreen extends Component {
 
     onSubmit = () => {
         Alert.alert('You tapped the button!');
-        // this.setState({ isLoading: true });
-        this.props.navigation.navigate('Confirmation');
-        // fetch(' ', {
-        //     method: 'post',
-        //     headers: { 'Content-Type': 'application/json' },
-        //     body: {
-        //         hello: 'world'
-        //     }
-        // });
+        fetch('http://10.2.1.217:8500', {
+            method: 'post',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                type: 'driver',
+                user_name: 'Jason Wang',
+                user_id: '67890',
+                lat: '30',
+                lon: '40',
+                from_time: '15:00',
+                to_time: '17:00',
+                rendezvous: 'gate 1',
+                seat_available: '3'
+            })
+        })
+            .then(response => {
+                console.log(response);
+                this.props.navigation.navigate('Confirmation');
+            })
+            .catch(error => {
+                console.log(error);
+            });
     };
 
-    onBack = () => {
-        this.setState({ isLoading: false });
-    };
+    // onBack = () => {
+    //     this.setState({ isLoading: false });
+    // };
 
     render() {
         const { from, to } = this.state;

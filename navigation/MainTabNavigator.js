@@ -11,8 +11,10 @@ import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import ConfirmationScreen from '../screens/ConfirmationScreen';
+import RouteScreen from '../screens/RouteScreen';
 
 const HomeStack = createStackNavigator({
+    Route: RouteScreen,
     Home: HomeScreen,
     Confirmation: ConfirmationScreen
 });

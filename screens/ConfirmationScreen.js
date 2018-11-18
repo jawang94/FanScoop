@@ -5,7 +5,7 @@ import { StyleSheet } from 'react-native';
 
 class ConfirmationScreen extends Component {
     state = {
-        isMatchDone: false
+        isMatchDone: true
     };
 
     render() {
