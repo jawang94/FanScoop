@@ -1,12 +1,18 @@
 import React from 'react';
-import { Header } from 'react-native-elements';
+import { Button, Header, Body, Title, Icon, Right, Left } from 'native-base';
 
-const MyHeader = () => (
-    <Header
-        leftComponent={{ icon: 'menu', color: '#fff' }}
-        centerComponent={{ text: 'MY TITLE', style: { color: '#fff' } }}
-        rightComponent={{ icon: 'home', color: '#fff' }}
-    />
+const MyHeader = props => (
+    <Header>
+        {/* <Left>
+            <Button transparent>
+                <Icon name="ios-car" />
+            </Button>
+        </Left> */}
+        <Body>
+            <Title>{props.title}</Title>
+        </Body>
+        {/* <Right /> */}
+    </Header>
 );
 
 export default MyHeader;
