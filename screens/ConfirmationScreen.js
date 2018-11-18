@@ -17,8 +17,8 @@ class ConfirmationScreen extends Component {
                 </Text>
                 <Button
                     primary
-                    style={styles.ButtonContainer2}
-                    onPress={() => navigate('Home')}
+                    style={styles.ButtonContainer}
+                    onPress={() => navigate('Route')}
                 >
                     <Text style={styles.Go}>Go</Text>
                 </Button>
