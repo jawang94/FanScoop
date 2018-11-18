@@ -147,6 +147,7 @@ class HomeScreen extends Component {
 
     onSubmit = () => {
         Alert.alert('You tapped the button!');
+        this.props.navigation.navigate('Confirmation');
         fetch('http://10.2.1.217:8500', {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
@@ -164,10 +165,13 @@ class HomeScreen extends Component {
         })
             .then(response => {
                 console.log(response);
-                this.props.navigation.navigate('Confirmation');
+                // this.props.navigation.navigate('Confirmation');
             })
             .catch(error => {
                 console.log(error);
+            })
+            .finally(() => {
+                // this.props.navigation.navigate('Confirmation');
             });
     };
 
