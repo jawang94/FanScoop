@@ -165,12 +165,12 @@ class HomeScreen extends Component {
     render() {
         const { from, to } = this.state;
         return (
-            <Container>
+            <Container style={styles.Container}>
                 <MyHeader title="Welcome Jason" />
                 <Content style={styles.Content}>
                     {/* <Text>{JSON.stringify(this.state)}</Text> */}
                     <Content>
-                        <Text style={styles.TextContainer}>CARPOOL ROLE</Text>
+                        <Text style={styles.TextContainer}>FanScoop</Text>
                         <MySegment
                             ride={this.state.ride}
                             onPress={this.onPress}
@@ -199,8 +199,9 @@ class HomeScreen extends Component {
                                     }}
                                 />
                                 <Input
-                                    style={{ flex: 1 }}
+                                    style={{ flex: 1, color: 'white' }}
                                     placeholder="1 Sports Pkwy, Sacramento, CA 95834"
+                                    placeholderTextColor="white"
                                     value={this.state.home}
                                     onChange={this.onHomeChange}
                                 />
@@ -224,15 +225,15 @@ class HomeScreen extends Component {
                                 />
                             )}
                             <TimePicker
-                                text="YOUR PICKUP TIME"
+                                text="YOUR PICKUP TIME:"
                                 from={from}
                                 to={to}
                             />
                             {!this.state.ride && (
                                 <Dropdown
                                     style={styles.Rendezvous}
-                                    text="Rendezvous location:"
-                                    placeholder="Rendezvous location:"
+                                    text="RENDEZVOUS LOCATION:"
+                                    placeholder="RENDEZVOUS LOCATION:"
                                     datas={this.state.rendezvous}
                                     onValueChange={this.onRendezvousChange}
                                     selectedValue={
@@ -296,9 +297,12 @@ class HomeScreen extends Component {
 export default HomeScreen;
 
 const styles = StyleSheet.create({
+    Container: {
+        backgroundColor: '#DFE3EE'
+    },
     Content: {
         flex: 1,
-        backgroundColor: '#383c92',
+        backgroundColor: '#54327E',
         paddingTop: 20,
         paddingBottom: 20,
         paddingLeft: 20,
@@ -340,5 +344,8 @@ const styles = StyleSheet.create({
         marginTop: 15,
         marginLeft: 110
     },
-    inputContainer: {}
+    inputContainer: {},
+    Rendezvous: {
+        marginTop: 10
+    }
 });

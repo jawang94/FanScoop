@@ -3,14 +3,14 @@ import { Button, Header, Body, Title, Icon, Right, Left } from 'native-base';
 import { StyleSheet } from 'react-native';
 
 const MyHeader = props => (
-    <Header>
+    <Header style={styles.Header}>
         {/* <Left>
             <Button transparent>
                 <Icon name="ios-car" />
             </Button>
         </Left> */}
         <Body>
-            <Title>{props.title}</Title>
+            <Title style={styles.Title}>{props.title}</Title>
         </Body>
         {/* <Right /> */}
     </Header>
@@ -18,7 +18,11 @@ const MyHeader = props => (
 
 const styles = StyleSheet.create({
     Header: {
-        backgroundColor: '#657179'
+        // backgroundColor: '#dfe3ee'
+    },
+    Title: {
+        fontSize: 25,
+        color: '#54327E'
     }
 });
 
