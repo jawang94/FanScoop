@@ -18,13 +18,13 @@ class TimePicker extends Component {
     hideToPicker = () => this.setState({ isToPickerVisible: false });
 
     render() {
-        const { from, to, isFromPickerVisible, isToPickerVisible } = this.state;
-        const { text } = this.props;
+        const { isFromPickerVisible, isToPickerVisible } = this.state;
+        const { text, from, to } = this.props;
         return (
             <Content>
+                <Text>{text}</Text>
                 <View>
                     <TouchableOpacity onPress={this.showFromPicker}>
-                        <Text>{text}</Text>
                         <Text>{from}</Text>
                     </TouchableOpacity>
                     <DateTimePicker
@@ -35,13 +35,14 @@ class TimePicker extends Component {
                         titleIOS="Your pickup time"
                     />
                 </View>
+                <Text>To</Text>
                 <View>
                     <TouchableOpacity onPress={this.showToPicker}>
                         <Text>{to}</Text>
                     </TouchableOpacity>
                     <DateTimePicker
                         isVisible={isToPickerVisible}
-                        onConfirm={this.handleToPicked}
+                        onConfirm={() => this.prop.handleToPicked()}
                         onCancel={this.hideToPicker}
                         mode="times"
                         titleIOS="Your pickup time"
