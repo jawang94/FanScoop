@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Item, Picker, Icon, Content, Text } from 'native-base';
 
 const Dropdown = ({
