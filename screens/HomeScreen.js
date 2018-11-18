@@ -104,7 +104,7 @@ class HomeScreen extends Component {
                     <MySegment ride={this.state.ride} onPress={this.onPress} />
                     <Content value style={styles.SwitchContainer}>
                         <Text value style={styles.SwitchText}>
-                            If I don't match as a Rider try to match me as a
+                            If I don't match as a Rider, try to match me as a
                             Driver
                         </Text>
                         <Switch value style={styles.Switch} />
@@ -113,7 +113,7 @@ class HomeScreen extends Component {
                         <Dropdown
                             style={styles.Event}
                             text="CHOOSE YOUR EVENT:"
-                            placeholder="Choose your event:"
+                            placeholder="Kings vs Lakers"
                             data={this.state.events}
                         />
                         <Dropdown
@@ -164,33 +164,21 @@ const styles = StyleSheet.create({
     SwitchText: {
         flex: 1,
         color: 'white',
+        textAlign: 'center',
         alignContent: 'space-between'
     },
     Switch: {
         flex: 1,
-        marginLeft: 250
+        alignSelf: 'center',
+        marginTop: 1
     },
     Form: {
         flex: 1,
         alignItems: 'center',
         paddingTop: 20,
         marginTop: 20,
-        height: 300,
         flexDirection: 'column',
         justifyContent: 'space-between'
-    },
-    Event: {
-        marginTop: 20
-    },
-    Seat: {
-        marginTop: 20
-    },
-    Date: {
-        marginTop: 30,
-        color: 'white'
-    },
-    Rendezvous: {
-        marginTop: 30
     },
     ButtonContainer: {
         marginTop: 30,

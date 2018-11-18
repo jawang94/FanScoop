@@ -10,7 +10,7 @@ class MyDatePicker extends Component {
 
     render() {
         return (
-            <Content>
+            <Content style={{ marginTop: 10 }}>
                 <Text>{this.props.text}</Text>
                 <DatePicker
                     defaultDate={new Date(2018, 4, 4)}
@@ -22,7 +22,7 @@ class MyDatePicker extends Component {
                     animationType="fade"
                     androidMode="default"
                     placeHolderText="Select date"
-                    textStyle={{ color: 'green' }}
+                    textStyle={{ color: 'white' }}
                     placeHolderTextStyle={{ color: '#d3d3d3' }}
                     onDateChange={this.setDate}
                 />

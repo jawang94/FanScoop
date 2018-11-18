@@ -12,15 +12,17 @@ class Dropdown extends Component {
 
     render() {
         return (
-            <Content>
-                <Text>{this.props.text}</Text>
+            <Content style={{ marginBottom: 10 }}>
+                <Text style={{ flex: 1, color: 'white', fontWeight: 'bold' }}>
+                    {this.props.text}
+                </Text>
                 <Item picker>
                     <Picker
                         mode="dropdown"
                         iosIcon={<Icon name="ios-arrow-down" />}
-                        style={{ width: undefined }}
+                        style={{ flex: 2, width: undefined }}
                         placeholder={this.props.placeholder}
-                        placeholderStyle={{ color: '#bfc6ea' }}
+                        placeholderStyle={{ color: 'white' }}
                         placeholderIconColor="#007aff"
                         // selectedValue={this.state.selected2}
                         // onValueChange={this.onValueChange2.bind(this)}
