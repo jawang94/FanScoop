@@ -37,7 +37,7 @@ class RouteScreen extends Component {
             riders: [
                 {
                     user_name: 'first rider',
-                    user_id: '67890',
+                    user_id: '67891',
                     lat: '30',
                     lon: '40',
                     from_time: '15:00',
@@ -47,7 +47,7 @@ class RouteScreen extends Component {
                 },
                 {
                     user_name: 'second rider',
-                    user_id: '67890',
+                    user_id: '67892',
                     lat: '30',
                     lon: '40',
                     from_time: '15:00',
@@ -57,7 +57,7 @@ class RouteScreen extends Component {
                 },
                 {
                     user_name: 'third rider',
-                    user_id: '67890',
+                    user_id: '67893',
                     lat: '30',
                     lon: '40',
                     from_time: '15:00',
