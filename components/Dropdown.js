@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { Item, Picker, Icon, Content, Text } from 'native-base';
 
 class Dropdown extends Component {
-    state = { selected: 'key1' };
+    state = { selected: 0 };
 
-    onValueChange(value: string) {
+    onValueChange = value => {
         this.setState({
             selected: value
         });
-    }
+    };
 
     render() {
         return (
@@ -24,13 +24,14 @@ class Dropdown extends Component {
                         placeholder={this.props.placeholder}
                         placeholderStyle={{ color: 'white' }}
                         placeholderIconColor="#007aff"
-                        // selectedValue={this.state.selected2}
-                        // onValueChange={this.onValueChange2.bind(this)}
+                        selectedValue={this.state.selected}
+                        onValueChange={this.onValueChange}
                     >
                         {this.props.data.map(data => (
                             <Picker.Item
                                 label={data.label}
                                 value={data.value}
+                                key={data.label}
                             />
                         ))}
                     </Picker>

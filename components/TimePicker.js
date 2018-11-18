@@ -29,9 +29,11 @@ class TimePicker extends Component {
                     </TouchableOpacity>
                     <DateTimePicker
                         isVisible={isFromPickerVisible}
-                        onConfirm={() => this.prop.handleFromPicked()}
+                        onConfirm={date =>
+                            this.prop.handleFromPicked(date, this.hideToPicker)
+                        }
                         onCancel={this.hideFromPicker}
-                        mode="times"
+                        mode="time"
                         titleIOS="Your pickup time"
                     />
                 </View>
@@ -42,9 +44,11 @@ class TimePicker extends Component {
                     </TouchableOpacity>
                     <DateTimePicker
                         isVisible={isToPickerVisible}
-                        onConfirm={() => this.prop.handleToPicked()}
+                        onConfirm={date =>
+                            this.prop.handleToPicked(date, this.hideToPicker)
+                        }
                         onCancel={this.hideToPicker}
-                        mode="times"
+                        mode="time"
                         titleIOS="Your pickup time"
                     />
                 </View>

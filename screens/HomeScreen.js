@@ -143,7 +143,7 @@ class HomeScreen extends Component {
                         />
                         <Dropdown
                             style={styles.Rendezvous}
-                            text="CHOOSE YOUR EVENT:"
+                            text="Rendezvous location:"
                             placeholder="Rendezvous location:"
                             data={this.state.rendezvous}
                         />
