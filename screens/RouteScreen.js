@@ -10,7 +10,9 @@ import {
     Thumbnail,
     Body,
     Right,
-    Button
+    Button,
+    Card,
+    CardItem
 } from 'native-base';
 import MyHeader from '../components/Header';
 
@@ -20,6 +22,7 @@ class RouteScreen extends Component {
     };
 
     state = {
+        ride: false,
         response: {
             driver: {
                 user_name: 'ryan efendy',
@@ -70,11 +73,14 @@ class RouteScreen extends Component {
         return (
             <Container>
                 <MyHeader title="Welcome Jason" />
-                <Content>
-                    <H1>Your Route</H1>
-                    <List>
-                        {this.state.response.riders.map(rider => (
-                            <ListItem thumbnail key={rider.user_id}>
+                {this.state.ride ? (
+                    <Content>
+                        <H1>Route</H1>
+                        <ListItem itemDivider>
+                            <Text>Your Driver</Text>
+                        </ListItem>
+                        <Card>
+                            <CardItem>
                                 <Left>
                                     <Thumbnail
                                         square
@@ -85,20 +91,57 @@ class RouteScreen extends Component {
                                     />
                                 </Left>
                                 <Body>
-                                    <Text>{rider.user_name}</Text>
                                     <Text>
-                                        {rider.from_time} to {rider.to_time}
+                                        {this.state.response.driver.user_name}
                                     </Text>
-                                </Body>
-                                <Right>
-                                    <Button transparent>
-                                        <Text>View</Text>
+                                    <Text>
+                                        {this.state.response.driver.from_time}{' '}
+                                        to {this.state.response.driver.to_time}
+                                    </Text>
+                                    <Text>Toyota Carolla</Text>
+                                    <Text>PWI12897</Text>
+                                    <Button>
+                                        <Text>Contact</Text>
                                     </Button>
-                                </Right>
+                                </Body>
+                            </CardItem>
+                        </Card>
+                    </Content>
+                ) : (
+                    <Content>
+                        <H1>Route</H1>
+                        <List>
+                            <ListItem itemDivider>
+                                <Text>Your Passangers</Text>
                             </ListItem>
-                        ))}
-                    </List>
-                </Content>
+                            {this.state.response.riders.map(rider => (
+                                <ListItem thumbnail key={rider.user_id}>
+                                    <Left>
+                                        <Thumbnail
+                                            square
+                                            source={{
+                                                uri:
+                                                    'https://placeimg.com/240/240/people'
+                                            }}
+                                        />
+                                    </Left>
+                                    <Body>
+                                        <Text>{rider.user_name}</Text>
+                                        <Text>
+                                            {rider.from_time} to {rider.to_time}
+                                        </Text>
+                                        <Text>1.2mi away</Text>
+                                    </Body>
+                                    <Right>
+                                        <Button transparent>
+                                            <Text>View</Text>
+                                        </Button>
+                                    </Right>
+                                </ListItem>
+                            ))}
+                        </List>
+                    </Content>
+                )}
             </Container>
         );
     }
