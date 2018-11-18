@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Alert } from 'react-native';
 import {
     Container,
     Content,
@@ -143,6 +143,17 @@ class HomeScreen extends Component {
         this.setState({ home: value });
     };
 
+    onSubmit = () => {
+        Alert.alert('You tapped the button!');
+        // fetch(' ', {
+        //     method: 'post',
+        //     headers: { 'Content-Type': 'application/json' },
+        //     body: {
+        //         hello: 'world'
+        //     }
+        // });
+    };
+
     render() {
         const { from, to } = this.state;
         return (
@@ -213,7 +224,11 @@ class HomeScreen extends Component {
                                 selectedValue={this.state.selectedRendezvous}
                             />
                         )}
-                        <Button primary style={styles.ButtonContainer}>
+                        <Button
+                            primary
+                            style={styles.ButtonContainer}
+                            onPress={this.onSubmit}
+                        >
                             <Text> Schedule </Text>
                         </Button>
                     </Form>
