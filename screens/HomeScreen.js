@@ -188,14 +188,6 @@ class HomeScreen extends Component {
                             ride={this.state.ride}
                             onPress={this.onPress}
                         />
-                        <Content style={styles.SwitchContainer}>
-                            <Text style={styles.SwitchText}>
-                                If I don't match as a Rider, try to match me as
-                                a Driver
-                            </Text>
-                            <Switch value={false} style={styles.Switch} />
-                        </Content>
-
                         <Form style={styles.Form}>
                             <Item
                                 style={{
@@ -328,16 +320,6 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 20,
         color: 'white'
-    },
-    SwitchContainer: {
-        alignContent: 'flex-end',
-        height: 70
-    },
-    SwitchText: {
-        flex: 1,
-        color: 'white',
-        textAlign: 'center',
-        alignContent: 'space-between'
     },
     Switch: {
         flex: 1,
