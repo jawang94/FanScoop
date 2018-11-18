@@ -5,7 +5,7 @@ import { StyleSheet } from 'react-native';
 
 class ConfirmationScreen extends Component {
     state = {
-        isMatchDone: false
+        isMatchDone: true
     };
 
     render() {
@@ -17,7 +17,7 @@ class ConfirmationScreen extends Component {
                 </Text>
                 <Button
                     primary
-                    style={styles.ButtonContainer}
+                    style={styles.ButtonContainer2}
                     onPress={() => navigate('Home')}
                 >
                     <Text>Go</Text>
@@ -45,7 +45,7 @@ class ConfirmationScreen extends Component {
 const styles = StyleSheet.create({
     Content: {
         flex: 1,
-        backgroundColor: '#383c92',
+        backgroundColor: '#54327E',
         paddingTop: 20,
         paddingBottom: 20,
         paddingLeft: 20,
@@ -66,7 +66,11 @@ const styles = StyleSheet.create({
     },
     ButtonContainer: {
         marginTop: 15,
-        marginLeft: 115
+        marginLeft: 120
+    },
+    ButtonContainer2: {
+        marginTop: 15,
+        marginLeft: 140
     }
 });
 
