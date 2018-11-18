@@ -148,18 +148,18 @@ class HomeScreen extends Component {
     onSubmit = () => {
         Alert.alert('You tapped the button!');
         this.props.navigation.navigate('Confirmation');
-        fetch('http://10.2.1.217:8500', {
+        fetch('http://172.20.10.2:8500', {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 type: 'driver',
-                user_name: 'Jason Wang',
+                user_name: 'Kobe Bryant',
                 user_id: '67890',
-                lat: '30',
-                lon: '40',
+                lat: '38.6870',
+                lon: '-121.3069',
                 from_time: '15:00',
                 to_time: '17:00',
-                rendezvous: 'gate 1',
+                rendezvous: 'Gate 1A',
                 seat_available: '3'
             })
         })

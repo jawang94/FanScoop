@@ -14,9 +14,9 @@ import ConfirmationScreen from '../screens/ConfirmationScreen';
 import RouteScreen from '../screens/RouteScreen';
 
 const HomeStack = createStackNavigator({
-    Route: RouteScreen,
     Home: HomeScreen,
-    Confirmation: ConfirmationScreen
+    Confirmation: ConfirmationScreen,
+    Route: RouteScreen
 });
 
 HomeStack.navigationOptions = {
