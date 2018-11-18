@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Header, Body, Title, Icon, Right, Left } from 'native-base';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Image } from 'react-native';
 
 const MyHeader = props => (
     <Header style={styles.Header}>
@@ -10,6 +10,14 @@ const MyHeader = props => (
             </Button>
         </Left> */}
         <Body>
+            <Image
+                source={require('../assets/images/saclogo.jpg')}
+                style={{
+                    width: 30,
+                    height: 30,
+                    marginBottom: -10
+                }}
+            />
             <Title style={styles.Title}>{props.title}</Title>
         </Body>
         {/* <Right /> */}

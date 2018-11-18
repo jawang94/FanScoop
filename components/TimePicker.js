@@ -69,11 +69,11 @@ const styles = StyleSheet.create({
     },
     text1: {
         textAlign: 'center',
-        color: '#76d472'
+        color: 'white'
     },
     text2: {
         textAlign: 'center',
-        color: '#76d472',
+        color: '#f1bf56',
         borderStyle: 'solid',
         borderWidth: 1,
         borderColor: 'white',

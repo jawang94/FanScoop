@@ -29,7 +29,7 @@ const Dropdown = ({
                 placeholderIconColor="#007aff"
                 selectedValue={selectedValue}
                 onValueChange={onValueChange}
-                textStyle={{ color: '#76d472' }}
+                textStyle={{ color: '#f1bf56' }}
             >
                 {datas.map(data => (
                     <Picker.Item

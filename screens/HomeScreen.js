@@ -306,8 +306,7 @@ const styles = StyleSheet.create({
         paddingTop: 20,
         paddingBottom: 20,
         paddingLeft: 20,
-        paddingRight: 20,
-        borderRadius: 10
+        paddingRight: 20
     },
     TextContainer: {
         flex: 1,
