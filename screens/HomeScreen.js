@@ -15,6 +15,7 @@ import {
     Segment,
     Text
 } from 'native-base';
+import { StyleSheet } from 'react-native';
 import { Font } from 'expo';
 // import { MonoText } from '../components/StyledText';
 import MyHeader from '../components/Header';
@@ -38,62 +39,80 @@ export default class HomeScreen extends Component {
         return (
             <Container>
                 <MyHeader title="Welcome Jason" />
-                <Content>
-                    <Text>Carpool Role</Text>
+                <Content style={styles.Content}>
+                    <Text style={styles.TextContainer}>Carpool Role</Text>
                     <MySegment />
-                    <Form>
-                        <Dropdown placeholder="Choose your event:" />
-                        <Dropdown placeholder="Seats Available" />
-                        <MyDatePicker />
+                    <Form style={styles.Form}>
+                        <Dropdown
+                            style={styles.Event}
+                            placeholder="Choose your event:"
+                        />
+                        <Dropdown
+                            style={styles.Seat}
+                            placeholder="Seats Available"
+                        />
+                        <MyDatePicker style={styles.Date} />
                         {/* <Dropdown placeholder="Availability" /> */}
-                        <Dropdown placeholder="Rendezvous Location" />
-                        <Button primary>
-                            <Text> Schedule </Text>
-                        </Button>
+                        <Dropdown
+                            style={styles.Rendezvous}
+                            placeholder="Rendezvous Location"
+                        />
+                        <Content style={styles.ButtonContainer}>
+                            <Button primary>
+                                <Text> Schedule </Text>
+                            </Button>
+                        </Content>
                     </Form>
                 </Content>
             </Container>
         );
     }
-
-    // _maybeRenderDevelopmentModeWarning() {
-    //     if (__DEV__) {
-    //         const learnMoreButton = (
-    //             <Text
-    //                 onPress={this._handleLearnMorePress}
-    //                 style={styles.helpLinkText}
-    //             >
-    //                 Learn more
-    //             </Text>
-    //         );
-
-    //         return (
-    //             <Text style={styles.developmentModeText}>
-    //                 Development mode is enabled, your app will be slower but you
-    //                 can use useful development tools. {learnMoreButton}
-    //             </Text>
-    //         );
-    //     }
-    //     return (
-    //         <Text style={styles.developmentModeText}>
-    //             You are not in development mode, your app will run at full
-    //             speed.
-    //         </Text>
-    //     );
-    // }
-
-    // _handleLearnMorePress = () => {
-    //     WebBrowser.openBrowserAsync(
-    //         'https://docs.expo.io/versions/latest/guides/development-mode'
-    //     );
-    // };
-
-    // _handleHelpPress = () => {
-    //     WebBrowser.openBrowserAsync(
-    //         'https://docs.expo.io/versions/latest/guides/up-and-running.html#can-t-see-your-changes'
-    //     );
-    // };
 }
+
+const styles = StyleSheet.create({
+    Content: {
+        flex: 1,
+        backgroundColor: '#383c92',
+        paddingTop: 20,
+        paddingBottom: 20,
+        paddingLeft: 20,
+        paddingRight: 20,
+        borderRadius: 10
+    },
+    TextContainer: {
+        flex: 1,
+        textAlign: 'center',
+        fontSize: 40,
+        fontWeight: 'bold',
+        marginBottom: 20,
+        color: 'white'
+    },
+    Form: {
+        flex: 1,
+        alignItems: 'center',
+        paddingTop: 20,
+        marginTop: 20,
+        height: 300,
+        flexDirection: 'column',
+        justifyContent: 'space-between'
+    },
+    Event: {
+        marginTop: 20
+    },
+    Seat: {
+        marginTop: 20
+    },
+    Date: {
+        marginTop: 30,
+        color: 'white'
+    },
+    Rendezvous: {
+        marginTop: 30
+    },
+    ButtonContainer: {
+        marginTop: 30
+    }
+});
 
 // const styles = StyleSheet.create({
 //     container: {
