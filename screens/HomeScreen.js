@@ -30,7 +30,7 @@ class HomeScreen extends Component {
         ride: true,
         // lat: '',
         // long: '',
-        home: '1 Sports Pkwy, Sacramento, CA 95834',
+        home: '',
         selectedEvent: 0,
         selectedRendezvous: 0,
         selectedSeats: 0,
@@ -189,6 +189,7 @@ class HomeScreen extends Component {
                                 style={{ flex: 1 }}
                                 placeholder="1ksdfjaskljfkla"
                                 value={this.state.home}
+                                onChange={this.onHomeChange}
                             />
                         </Item>
                         <Dropdown
