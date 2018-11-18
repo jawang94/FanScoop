@@ -15,6 +15,7 @@ import {
     CardItem
 } from 'native-base';
 import MyHeader from '../components/Header';
+import MyMap from '../components/MyMap';
 
 class RouteScreen extends Component {
     static navigationOptions = {
@@ -22,7 +23,7 @@ class RouteScreen extends Component {
     };
 
     state = {
-        ride: false,
+        ride: true,
         response: {
             driver: {
                 user_name: 'ryan efendy',
@@ -106,6 +107,7 @@ class RouteScreen extends Component {
                                 </Body>
                             </CardItem>
                         </Card>
+                        <MyMap />
                     </Content>
                 ) : (
                     <Content>
