@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Content, Text, DatePicker, Icon } from 'native-base';
+import { Content, Text, DatePicker } from 'native-base';
 
 class MyDatePicker extends Component {
     state = { chosenDate: new Date() };
@@ -13,7 +13,6 @@ class MyDatePicker extends Component {
             <Content>
                 <DatePicker
                     defaultDate={new Date(2018, 4, 4)}
-                    iosIcon={<Icon name="ios-arrow-down" />}
                     minimumDate={new Date(2018, 1, 1)}
                     maximumDate={new Date(2018, 12, 31)}
                     locale="en"
