@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, Content, Button } from 'native-base';
-import MySpinner from '../components/Spinner';
 import { StyleSheet } from 'react-native';
+import MySpinner from '../components/Spinner';
 
 class ConfirmationScreen extends Component {
     state = {
