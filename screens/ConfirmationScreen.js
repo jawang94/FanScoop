@@ -5,7 +5,7 @@ import MySpinner from '../components/Spinner';
 
 class ConfirmationScreen extends Component {
     state = {
-        isMatchDone: true
+        isMatchDone: false
     };
 
     render() {

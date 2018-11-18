@@ -147,11 +147,19 @@ class HomeScreen extends Component {
 
     onSubmit = () => {
         Alert.alert('You tapped the button!');
-        this.props.navigation.navigate('Confirmation');
-        fetch('http://172.20.10.2:8500', {
-            method: 'post',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
+        let body;
+        if (this.state.ride) {
+            body = JSON.stringify({
+                type: 'rider',
+                user_name: 'Lebron James',
+                user_id: '67890',
+                lat: '38.6914',
+                lon: '-121.3083',
+                from_time: '15:00',
+                to_time: '17:00'
+            });
+        } else {
+            body = JSON.stringify({
                 type: 'driver',
                 user_name: 'Kobe Bryant',
                 user_id: '67890',
@@ -161,7 +169,13 @@ class HomeScreen extends Component {
                 to_time: '17:00',
                 rendezvous: 'Gate 1A',
                 seat_available: '3'
-            })
+            });
+        }
+        this.props.navigation.navigate('Confirmation');
+        fetch('http://172.20.10.2:8500', {
+            method: 'post',
+            headers: { 'Content-Type': 'application/json' },
+            body
         })
             .then(response => {
                 console.log(response);
@@ -183,7 +197,7 @@ class HomeScreen extends Component {
         const { from, to } = this.state;
         return (
             <Container style={styles.Container}>
-                <MyHeader title="Welcome Jason" />
+                <MyHeader title="Welcome" />
                 <Content style={styles.Content}>
                     {/* <Text>{JSON.stringify(this.state)}</Text> */}
                     <Content>
