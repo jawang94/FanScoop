@@ -5,8 +5,19 @@ import MySpinner from '../components/Spinner';
 
 class ConfirmationScreen extends Component {
     state = {
-        isMatchDone: true
+        isMatchDone: false
     };
+
+    componentDidMount() {
+        this.timer = setInterval(
+            () => this.setState({ isMatchDone: true }),
+            5000
+        );
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timer);
+    }
 
     render() {
         const { navigate } = this.props.navigation;
