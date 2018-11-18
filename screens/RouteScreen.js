@@ -107,7 +107,6 @@ class RouteScreen extends Component {
                                 </Body>
                             </CardItem>
                         </Card>
-                        <MyMap />
                     </Content>
                 ) : (
                     <Content>
@@ -144,6 +143,7 @@ class RouteScreen extends Component {
                         </List>
                     </Content>
                 )}
+                <MyMap />
             </Container>
         );
     }
