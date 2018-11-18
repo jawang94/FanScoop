@@ -114,12 +114,11 @@ class HomeScreen extends Component {
             <Container>
                 <MyHeader title="Welcome Jason" />
                 <Content style={styles.Content}>
-                    <Text>CARPOOL ROLE</Text>
+                    <Text style={styles.TextContainer}>CARPOOL ROLE</Text>
                     <MySegment ride={this.state.ride} onPress={this.onPress} />
                     <Content style={styles.SwitchContainer}>
                         <Text style={styles.SwitchText}>
-                            If I don't match as a Rider try to match me as a
->>>>>>> upstream/master
+                            If I don't match as a Rider, try to match me as a
                             Driver
                         </Text>
                         <Switch value style={styles.Switch} />

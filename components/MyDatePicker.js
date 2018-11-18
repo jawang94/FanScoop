@@ -13,6 +13,7 @@ class MyDatePicker extends Component {
             <Content style={{ marginTop: 10 }}>
                 <Text>{this.props.text}</Text>
                 <DatePicker
+                    style={{color = 'white'}}
                     defaultDate={new Date(2018, 4, 4)}
                     minimumDate={new Date(2018, 1, 1)}
                     maximumDate={new Date(2018, 12, 31)}
