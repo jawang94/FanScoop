@@ -11,6 +11,7 @@ class MyDatePicker extends Component {
     render() {
         return (
             <Content>
+                <Text>{this.props.text}</Text>
                 <DatePicker
                     defaultDate={new Date(2018, 4, 4)}
                     minimumDate={new Date(2018, 1, 1)}
