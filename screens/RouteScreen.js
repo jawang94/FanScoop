@@ -77,31 +77,44 @@ class RouteScreen extends Component {
                 {this.state.ride ? (
                     <Content style={styles.Content}>
                         <H1 style={styles.Title}>Route</H1>
-                        <ListItem itemDivider>
-                            <Text>Your Driver</Text>
+                        <ListItem
+                            itemDivider
+                            style={{ backgroundColor: 'none' }}
+                        >
+                            <Text style={styles.Title2}>Your Driver:</Text>
                         </ListItem>
-                        <Card>
-                            <CardItem>
-                                <Left>
+                        <Card style={{ backgroundColor: 'none' }}>
+                            <CardItem style={{ backgroundColor: 'none' }}>
+                                <Left style={{ backgroundColor: 'none' }}>
                                     <Thumbnail
                                         square
                                         source={{
                                             uri:
                                                 'https://placeimg.com/240/240/people'
                                         }}
+                                        style={{
+                                            borderRadius: 10,
+                                            borderWidth: 1,
+                                            borderColor: 'white',
+                                            marginLeft: 30
+                                        }}
                                     />
                                 </Left>
-                                <Body>
-                                    <Text>
+                                <Body style={{ backgroundColor: 'none' }}>
+                                    <Text style={styles.BodyText}>
                                         {this.state.response.driver.user_name}
                                     </Text>
-                                    <Text>
+                                    <Text style={styles.BodyText}>
                                         {this.state.response.driver.from_time}{' '}
                                         to {this.state.response.driver.to_time}
                                     </Text>
-                                    <Text>Toyota Carolla</Text>
-                                    <Text>PWI12897</Text>
-                                    <Button>
+                                    <Text style={styles.BodyText}>
+                                        Toyota Carolla
+                                    </Text>
+                                    <Text style={styles.BodyText}>
+                                        PWI12897
+                                    </Text>
+                                    <Button style={{ height: 30 }}>
                                         <Text>Contact</Text>
                                     </Button>
                                 </Body>
@@ -166,20 +179,27 @@ class RouteScreen extends Component {
                         </List>
                     </Content>
                 )}
-                <MyMap />
+                <Content
+                    style={{ height: 100, marginTop: -100, paddingBottom: 20 }}
+                >
+                    <MyMap />
+                </Content>
             </Container>
         );
     }
 }
 
 const styles = {
+    Container: {
+        flex: 1
+    },
     Content: {
         flex: 1,
         backgroundColor: '#54327E',
         paddingTop: 20,
-        paddingBottom: 20,
         paddingLeft: 20,
         paddingRight: 20,
+        marginBottom: -100,
         alignContent: 'flex-start'
     },
     Title: {
@@ -188,6 +208,13 @@ const styles = {
         fontSize: 30,
         fontWeight: 'bold',
         color: 'white'
+    },
+    Title2: {
+        flex: 1,
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: 'white',
+        marginTop: -10
     },
     BodyText: {
         color: 'white',
