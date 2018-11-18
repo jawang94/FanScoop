@@ -12,7 +12,8 @@ import {
     Right,
     Button,
     Card,
-    CardItem
+    CardItem,
+    Icon
 } from 'native-base';
 import MyHeader from '../components/Header';
 import MyMap from '../components/MyMap';
@@ -90,7 +91,7 @@ class RouteScreen extends Component {
                                         square
                                         source={{
                                             uri:
-                                                'https://placeimg.com/240/240/people'
+                                                'https://placeimg.com/400/400/people'
                                         }}
                                         style={{
                                             borderRadius: 10,
@@ -114,8 +115,27 @@ class RouteScreen extends Component {
                                     <Text style={styles.BodyText}>
                                         PWI12897
                                     </Text>
-                                    <Button style={{ height: 30 }}>
-                                        <Text>Contact</Text>
+                                    <Button style={{ marginRight: 20 }}>
+                                        <Text>
+                                            <Icon
+                                                name="ios-call"
+                                                style={{
+                                                    fontSize: 25,
+                                                    color: '#fff'
+                                                }}
+                                            />
+                                            Call
+                                        </Text>
+                                        <Text>
+                                            <Icon
+                                                name="ios-text"
+                                                style={{
+                                                    fontSize: 25,
+                                                    color: '#fff'
+                                                }}
+                                            />
+                                            Text
+                                        </Text>
                                     </Button>
                                 </Body>
                             </CardItem>
