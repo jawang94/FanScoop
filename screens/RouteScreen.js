@@ -22,7 +22,7 @@ class RouteScreen extends Component {
     };
 
     state = {
-        ride: false,
+        ride: true,
         response: {
             driver: {
                 user_name: 'ryan efendy',
@@ -74,8 +74,8 @@ class RouteScreen extends Component {
             <Container>
                 <MyHeader title="Welcome Jason" />
                 {this.state.ride ? (
-                    <Content>
-                        <H1>Route</H1>
+                    <Content style={styles.Content}>
+                        <H1 style={styles.Title}>Route</H1>
                         <ListItem itemDivider>
                             <Text>Your Driver</Text>
                         </ListItem>
@@ -108,11 +108,23 @@ class RouteScreen extends Component {
                         </Card>
                     </Content>
                 ) : (
-                    <Content>
-                        <H1>Route</H1>
-                        <List>
-                            <ListItem itemDivider>
-                                <Text>Your Passangers</Text>
+                    <Content style={styles.Content}>
+                        <H1 style={styles.Title}>Your Route</H1>
+                        <List style={styles.List}>
+                            <ListItem
+                                itemDivider
+                                style={{ backgroundColor: 'none' }}
+                            >
+                                <Text
+                                    style={{
+                                        fontSize: 20,
+                                        color: 'white',
+                                        fontWeight: 'bold',
+                                        textDecorationLine: 'underline'
+                                    }}
+                                >
+                                    Check out your squad:
+                                </Text>
                             </ListItem>
                             {this.state.response.riders.map(rider => (
                                 <ListItem thumbnail key={rider.user_id}>
@@ -123,18 +135,29 @@ class RouteScreen extends Component {
                                                 uri:
                                                     'https://placeimg.com/240/240/people'
                                             }}
+                                            style={{
+                                                borderRadius: 10,
+                                                borderWidth: 1,
+                                                borderColor: 'white'
+                                            }}
                                         />
                                     </Left>
                                     <Body>
-                                        <Text>{rider.user_name}</Text>
-                                        <Text>
+                                        <Text style={styles.BodyText}>
+                                            {rider.user_name}
+                                        </Text>
+                                        <Text style={styles.BodyText}>
                                             {rider.from_time} to {rider.to_time}
                                         </Text>
-                                        <Text>1.2mi away</Text>
+                                        <Text style={styles.BodyText}>
+                                            1.2mi away
+                                        </Text>
                                     </Body>
                                     <Right>
                                         <Button transparent>
-                                            <Text>View</Text>
+                                            <Text style={styles.BodyText}>
+                                                View
+                                            </Text>
                                         </Button>
                                     </Right>
                                 </ListItem>
@@ -150,12 +173,23 @@ class RouteScreen extends Component {
 const styles = {
     Content: {
         flex: 1,
-        backgroundColor: '#383c92',
+        backgroundColor: '#54327E',
         paddingTop: 20,
         paddingBottom: 20,
         paddingLeft: 20,
         paddingRight: 20,
-        borderRadius: 10
+        alignContent: 'flex-start'
+    },
+    Title: {
+        flex: 1,
+        marginLeft: 15,
+        fontSize: 30,
+        fontWeight: 'bold',
+        color: 'white'
+    },
+    BodyText: {
+        color: 'white',
+        fontWeight: 'bold'
     }
 };
 

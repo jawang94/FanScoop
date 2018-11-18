@@ -209,7 +209,7 @@ class HomeScreen extends Component {
                                 />
                                 <Input
                                     style={{ flex: 1, color: 'white' }}
-                                    placeholder="1 Sports Pkwy, Sacramento, CA 95834"
+                                    placeholder="1 Sports Pkwy"
                                     placeholderTextColor="white"
                                     value={this.state.home}
                                     onChange={this.onHomeChange}

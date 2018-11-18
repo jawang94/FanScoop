@@ -15,7 +15,8 @@ const MyHeader = props => (
                 style={{
                     width: 30,
                     height: 30,
-                    marginBottom: -10
+                    marginTop: -10,
+                    marginBottom: -5
                 }}
             />
             <Title style={styles.Title}>{props.title}</Title>
@@ -29,7 +30,7 @@ const styles = StyleSheet.create({
         // backgroundColor: '#dfe3ee'
     },
     Title: {
-        fontSize: 25,
+        fontSize: 20,
         color: '#54327E'
     }
 });
