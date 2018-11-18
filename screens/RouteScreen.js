@@ -12,7 +12,8 @@ import {
     Right,
     Button,
     Card,
-    CardItem
+    CardItem,
+    Icon
 } from 'native-base';
 import MyHeader from '../components/Header';
 import MyMap from '../components/MyMap';
@@ -102,7 +103,26 @@ class RouteScreen extends Component {
                                     <Text>Toyota Carolla</Text>
                                     <Text>PWI12897</Text>
                                     <Button>
-                                        <Text>Contact</Text>
+                                        <Text>
+                                            <Icon
+                                                name="ios-call"
+                                                style={{
+                                                    fontSize: 25,
+                                                    color: '#fff'
+                                                }}
+                                            />
+                                            Call
+                                        </Text>
+                                        <Text>
+                                            <Icon
+                                                name="ios-text"
+                                                style={{
+                                                    fontSize: 25,
+                                                    color: '#fff'
+                                                }}
+                                            />
+                                            Text
+                                        </Text>
                                     </Button>
                                 </Body>
                             </CardItem>
